@@ -1,34 +1,91 @@
 ---
 interface Props {
   class?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'hero';
+  showText?: boolean;
 }
 
-const { class: className = '', size = 'md' } = Astro.props;
+const { class: className = '', size = 'md', showText = true } = Astro.props;
 
 const sizes = {
   sm: 'h-8 w-8',
   md: 'h-10 w-10',
-  lg: 'h-12 w-12'
-};
-
-const textSizes = {
-  sm: 'text-sm',
-  md: 'text-base',
-  lg: 'text-lg'
+  lg: 'h-12 w-12',
+  xl: 'h-16 w-16',
+  hero: 'h-24 w-24 md:h-32 md:w-32'
 };
 ---
 
 <a href="/" class:list={["flex items-center gap-3 group", className]}>
-  <div class:list={["flex items-center justify-center bg-gradient-to-br from-accent-500 to-accent-600 text-white font-bold rounded-xl shadow-lg shadow-accent-500/20", sizes[size], textSizes[size]]}>
-    <span>G</span>
+  <div class:list={["relative flex-shrink-0", sizes[size]]}>
+    <!-- Globe Logo SVG -->
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-lg">
+      <defs>
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#D4AF37"/>
+          <stop offset="50%" style="stop-color:#FFD700"/>
+          <stop offset="100%" style="stop-color:#B8860B"/>
+        </linearGradient>
+        <radialGradient id="sphereShine" cx="30%" cy="30%" r="60%">
+          <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25"/>
+          <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+        </radialGradient>
+      </defs>
+      
+      <!-- Main globe circle -->
+      <circle cx="50" cy="50" r="46" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
+      
+      <!-- Grid lines -->
+      <g stroke="#2a2a2a" stroke-width="0.5" fill="none">
+        <ellipse cx="50" cy="50" rx="44" ry="44"/>
+        <ellipse cx="50" cy="50" rx="44" ry="22"/>
+        <ellipse cx="50" cy="50" rx="44" ry="33"/>
+        <ellipse cx="50" cy="50" rx="22" ry="44"/>
+        <ellipse cx="50" cy="50" rx="33" ry="44"/>
+      </g>
+      
+      <!-- Continents with gold borders -->
+      <path d="M20 28 Q25 25 32 26 Q38 24 42 28 Q44 32 40 38 Q36 42 30 40 Q24 38 22 34 Q18 30 20 28Z" 
+            fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M32 50 Q36 48 38 52 Q40 58 38 66 Q35 72 32 70 Q28 66 30 58 Q31 52 32 50Z" 
+            fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M52 24 Q58 22 62 26 Q66 30 64 34 Q60 36 56 34 Q52 32 52 28 Q51 26 52 24Z" 
+            fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M56 40 Q62 38 66 44 Q70 52 68 62 Q64 70 58 68 Q52 64 54 54 Q55 46 56 40Z" 
+            fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M68 26 Q74 24 80 28 Q84 34 82 42 Q78 48 72 46 Q66 42 68 34 Q67 30 68 26Z" 
+            fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M74 60 Q80 58 82 64 Q82 70 78 72 Q74 72 72 68 Q72 62 74 60Z" 
+            fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+      
+      <!-- Gold highlight dots -->
+      <circle cx="28" cy="32" r="1.5" fill="url(#goldGradient)"/>
+      <circle cx="58" cy="28" r="1.5" fill="url(#goldGradient)"/>
+      <circle cx="60" cy="52" r="1.5" fill="url(#goldGradient)"/>
+      <circle cx="76" cy="36" r="1.5" fill="url(#goldGradient)"/>
+      
+      <!-- Outer ring -->
+      <circle cx="50" cy="50" r="47" fill="none" stroke="url(#goldGradient)" stroke-width="1" opacity="0.5"/>
+      
+      <!-- Shine -->
+      <circle cx="50" cy="50" r="46" fill="url(#sphereShine)"/>
+    </svg>
   </div>
-  <div class="flex flex-col">
-    <span class="font-bold text-white group-hover:text-accent-400 transition-colors leading-tight">
-      Global Management
-    </span>
-    <span class="text-xs text-text-secondary leading-tight">
-      & Construction Corp.
-    </span>
-  </div>
+  
+  {showText && (
+    <div class="flex flex-col">
+      <span class:list={[
+        "font-bold text-white group-hover:text-[#FFD700] transition-colors leading-tight",
+        size === 'hero' ? 'text-xl md:text-2xl' : size === 'xl' ? 'text-lg' : ''
+      ]}>
+        Global Management
+      </span>
+      <span class:list={[
+        "text-text-secondary leading-tight",
+        size === 'hero' ? 'text-sm md:text-base' : 'text-xs'
+      ]}>
+        & Construction Corp.
+      </span>
+    </div>
+  )}
 </a>
