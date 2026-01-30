@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Phase 1 Complete">
+  <main class="min-h-screen flex items-center justify-center">
+    <div class="text-center px-6">
+      <div class="mb-8">
+        <span class="inline-block px-4 py-2 bg-accent-500 text-white rounded-full text-sm font-semibold mb-4">
+          ✓ Phase 1 Complete
+        </span>
+      </div>
+      
+      <h1 class="text-5xl md:text-6xl font-bold text-primary-900 mb-6">
+        Global Construction NV
+      </h1>
+      
+      <p class="text-xl text-neutral-600 mb-8 max-w-2xl mx-auto">
+        Foundation setup complete. Astro + Tailwind CSS + React + Motion.dev ready for development.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <span class="px-4 py-2 bg-primary-100 text-primary-800 rounded-lg font-medium">
+          Astro 5.x
+        </span>
+        <span class="px-4 py-2 bg-primary-100 text-primary-800 rounded-lg font-medium">
+          Tailwind CSS 4
+        </span>
+        <span class="px-4 py-2 bg-primary-100 text-primary-800 rounded-lg font-medium">
+          React 19
+        </span>
+        <span class="px-4 py-2 bg-primary-100 text-primary-800 rounded-lg font-medium">
+          Motion.dev
+        </span>
+      </div>
+      
+      <div class="mt-12 p-6 bg-white rounded-xl shadow-lg max-w-md mx-auto">
+        <h2 class="text-lg font-semibold text-neutral-800 mb-3">Deployment Status</h2>
+        <div class="space-y-2 text-left text-sm">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+            <span class="text-neutral-600">Local development server</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+            <span class="text-neutral-600">Tailwind CSS configured</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+            <span class="text-neutral-600">React integration ready</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+            <span class="text-neutral-600">DigitalOcean deployment pending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
