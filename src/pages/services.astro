@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Services" description="Explore our construction and management services - commercial, residential, renovations, and project management in Las Vegas, NV.">
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+          Our Services
+        </h1>
+        <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+          Comprehensive construction and management solutions for your project needs
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-200">
+          <div class="w-14 h-14 bg-primary-100 text-primary-700 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">Commercial Construction</h3>
+          <p class="text-neutral-600">
+            Full-service commercial construction for offices, retail spaces, and industrial facilities.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-200">
+          <div class="w-14 h-14 bg-primary-100 text-primary-700 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">Residential Construction</h3>
+          <p class="text-neutral-600">
+            Custom homes and residential projects built to the highest standards of quality.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-200">
+          <div class="w-14 h-14 bg-primary-100 text-primary-700 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">Renovations</h3>
+          <p class="text-neutral-600">
+            Transform existing spaces with our expert renovation and remodeling services.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-200">
+          <div class="w-14 h-14 bg-primary-100 text-primary-700 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-900 mb-3">Project Management</h3>
+          <p class="text-neutral-600">
+            Professional oversight ensuring projects stay on schedule and within budget.
+          </p>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a 
+          href="/contact" 
+          class="inline-block px-8 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-lg transition-colors"
+        >
+          Get a Quote
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
