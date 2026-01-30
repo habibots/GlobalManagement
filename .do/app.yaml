@@ -1,0 +1,13 @@
+name: global-construction-nv
+region: nyc
+static_sites:
+  - name: web
+    github:
+      repo: habibots/GlobalManagement
+      branch: main
+      deploy_on_push: true
+    build_command: npm run build
+    output_dir: dist
+    environment_slug: node-js
+    routes:
+      - path: /
