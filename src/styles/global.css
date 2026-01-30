@@ -1,21 +1,16 @@
 @import "tailwindcss";
 
-/* Brand Colors - Global Construction NV */
+/* Dark Mode Brand Colors - Global Construction NV */
 @theme {
-  /* Primary Blues */
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
-  --color-primary-950: #172554;
+  /* Dark Background Shades */
+  --color-dark-950: #030303;
+  --color-dark-900: #0a0a0a;
+  --color-dark-800: #121212;
+  --color-dark-700: #1a1a1a;
+  --color-dark-600: #242424;
+  --color-dark-500: #2e2e2e;
 
-  /* Accent Orange */
+  /* Vibrant Accent - Orange/Coral */
   --color-accent-50: #fff7ed;
   --color-accent-100: #ffedd5;
   --color-accent-200: #fed7aa;
@@ -27,18 +22,23 @@
   --color-accent-800: #9a3412;
   --color-accent-900: #7c2d12;
 
-  /* Neutral Grays */
-  --color-neutral-50: #f8fafc;
-  --color-neutral-100: #f1f5f9;
-  --color-neutral-200: #e2e8f0;
-  --color-neutral-300: #cbd5e1;
-  --color-neutral-400: #94a3b8;
-  --color-neutral-500: #64748b;
-  --color-neutral-600: #475569;
-  --color-neutral-700: #334155;
-  --color-neutral-800: #1e293b;
-  --color-neutral-900: #0f172a;
-  --color-neutral-950: #020617;
+  /* Vibrant Colors for Gradients */
+  --color-vibrant-pink: #ec4899;
+  --color-vibrant-purple: #a855f7;
+  --color-vibrant-blue: #3b82f6;
+  --color-vibrant-cyan: #06b6d4;
+  --color-vibrant-green: #10b981;
+  --color-vibrant-yellow: #eab308;
+  --color-vibrant-orange: #f97316;
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+
+  /* Border Colors */
+  --color-border: #27272a;
+  --color-border-light: #3f3f46;
 
   /* Font Families */
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -53,7 +53,55 @@
   
   body {
     font-family: var(--font-sans);
-    color: var(--color-neutral-900);
-    background-color: var(--color-neutral-50);
+    color: var(--color-text-primary);
+    background-color: var(--color-dark-950);
+  }
+
+  ::selection {
+    background-color: var(--color-accent-500);
+    color: white;
+  }
+}
+
+/* Vibrant Gradient Utilities */
+@layer utilities {
+  .gradient-vibrant {
+    background: linear-gradient(
+      135deg,
+      var(--color-vibrant-pink) 0%,
+      var(--color-vibrant-purple) 25%,
+      var(--color-vibrant-blue) 50%,
+      var(--color-vibrant-cyan) 75%,
+      var(--color-vibrant-green) 100%
+    );
+  }
+
+  .gradient-aurora {
+    background: linear-gradient(
+      45deg,
+      #ff006620 0%,
+      #8b5cf620 20%,
+      #3b82f620 40%,
+      #06b6d420 60%,
+      #10b98120 80%,
+      #eab30820 100%
+    );
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.3);
+  }
+
+  .glow-vibrant {
+    box-shadow: 
+      0 0 60px rgba(236, 72, 153, 0.15),
+      0 0 100px rgba(59, 130, 246, 0.1);
   }
 }
