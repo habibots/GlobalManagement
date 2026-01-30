@@ -63,65 +63,29 @@ import mainBuilding from '../assets/images/image-01-main-building-369x450.jpg';
         <div class="relative hidden lg:flex items-center justify-center">
           <!-- Large Globe Logo Display -->
           <div class="relative">
-            <!-- Glow effect behind logo -->
-            <div class="absolute -inset-8 bg-gradient-to-r from-[#D4AF37]/20 via-[#FFD700]/15 to-[#B8860B]/20 rounded-full blur-3xl"></div>
-            
-            <!-- Large Globe - Accurate Earth (Atlantic View) -->
+            <!-- Simple Wireframe Globe - Grid Lines Only -->
             <div class="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-2xl">
-                <defs>
-                  <linearGradient id="goldFillHero" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#D4AF37"/>
-                    <stop offset="50%" style="stop-color:#FFD700"/>
-                    <stop offset="100%" style="stop-color:#B8860B"/>
-                  </linearGradient>
-                  <radialGradient id="oceanBgHero" cx="30%" cy="30%" r="70%">
-                    <stop offset="0%" style="stop-color:#1a1a1a"/>
-                    <stop offset="100%" style="stop-color:#0a0a0a"/>
-                  </radialGradient>
-                  <radialGradient id="shineOverlayHero" cx="25%" cy="25%" r="50%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.08"/>
-                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
-                  </radialGradient>
-                  <clipPath id="globeClipHero">
-                    <circle cx="50" cy="50" r="48"/>
-                  </clipPath>
-                </defs>
-                
-                <!-- Ocean background (black) -->
-                <circle cx="50" cy="50" r="48" fill="url(#oceanBgHero)"/>
-                
-                <!-- Continents - Detailed accurate shapes (Atlantic view) -->
-                <g clip-path="url(#globeClipHero)" fill="url(#goldFillHero)">
-                  <!-- North America - detailed -->
-                  <path d="M5 28 C5 25 8 22 10 20 C12 18 15 16 18 15 C21 14 24 13 27 13 C30 13 33 14 35 15 C37 16 38 14 40 13 C42 12 44 12 46 13 C48 14 49 16 50 18 C50 20 49 22 48 24 C47 26 45 27 44 29 C43 31 43 33 44 35 C45 37 47 38 48 40 C48 42 47 44 45 45 C43 46 41 47 39 48 C37 49 35 51 33 53 C31 55 29 56 27 57 C25 58 23 57 21 56 C19 55 17 53 16 51 C15 49 14 47 13 45 C12 43 10 41 9 39 C8 37 7 35 6 33 C5 31 5 29 5 28 Z"/>
-                  <!-- Greenland -->
-                  <path d="M38 8 C40 7 43 6 46 6 C49 6 52 7 54 9 C56 11 57 13 56 15 C55 17 53 18 51 19 C49 20 47 20 45 19 C43 18 41 17 40 15 C39 13 38 11 38 9 C38 8 38 8 38 8 Z"/>
-                  <!-- Iceland -->
-                  <path d="M48 18 C49 17 51 17 52 18 C53 19 53 20 52 21 C51 22 50 22 49 21 C48 20 48 19 48 18 Z"/>
-                  <!-- UK & Ireland -->
-                  <path d="M52 26 C53 25 54 25 55 26 C56 27 56 28 56 29 C56 30 55 31 54 31 C53 31 52 30 52 29 C52 28 52 27 52 26 Z"/>
-                  <path d="M50 27 C51 27 51 28 51 29 C51 30 50 30 50 29 C50 28 50 27 50 27 Z"/>
-                  <!-- Europe mainland -->
-                  <path d="M54 24 C56 23 58 22 60 22 C62 22 64 23 66 24 C68 25 70 27 71 29 C72 31 72 33 71 35 C70 37 68 38 66 38 C64 38 62 37 61 36 C60 35 59 34 58 33 C57 32 56 31 55 30 C54 29 54 28 54 27 C54 26 54 25 54 24 Z"/>
-                  <!-- Scandinavia -->
-                  <path d="M56 18 C57 16 59 15 61 15 C63 15 65 16 66 18 C67 20 67 22 66 24 C65 26 63 26 62 25 C61 24 60 22 59 21 C58 20 57 19 56 18 Z"/>
-                  <!-- Africa - detailed -->
-                  <path d="M54 40 C56 39 58 38 60 38 C62 38 64 39 66 40 C68 41 70 43 72 46 C74 49 75 52 76 55 C77 58 77 61 76 64 C75 67 74 70 72 72 C70 74 68 76 65 77 C62 78 59 78 57 76 C55 74 54 72 53 69 C52 66 52 63 52 60 C52 57 52 54 52 51 C52 48 53 45 53 43 C53 41 54 40 54 40 Z"/>
-                  <!-- South America - detailed -->
-                  <path d="M28 56 C30 55 32 54 34 54 C36 54 38 55 39 57 C40 59 41 61 41 64 C41 67 41 70 40 73 C39 76 38 79 36 81 C34 83 32 85 30 85 C28 85 26 84 25 82 C24 80 23 78 23 75 C23 72 23 69 23 66 C23 63 24 60 25 58 C26 56 27 56 28 56 Z"/>
-                  <!-- Central America & Caribbean -->
-                  <path d="M25 52 C26 51 28 51 29 52 C30 53 30 54 29 55 C28 56 27 56 26 55 C25 54 25 53 25 52 Z"/>
-                  <path d="M32 50 C33 50 34 51 34 52 C34 53 33 53 32 53 C31 53 31 52 31 51 C31 50 32 50 32 50 Z"/>
-                  <!-- Middle East -->
-                  <path d="M70 36 C72 35 74 35 76 36 C78 37 79 39 79 41 C79 43 78 45 76 46 C74 47 72 47 71 46 C70 45 69 43 69 41 C69 39 69 37 70 36 Z"/>
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <g fill="none" stroke="#FFFFFF" stroke-width="1.5">
+                  <!-- Outer circle -->
+                  <circle cx="50" cy="50" r="45"/>
+                  
+                  <!-- Horizontal latitude lines -->
+                  <ellipse cx="50" cy="50" rx="45" ry="15"/>
+                  <ellipse cx="50" cy="35" rx="38" ry="12"/>
+                  <ellipse cx="50" cy="65" rx="38" ry="12"/>
+                  
+                  <!-- Vertical longitude lines -->
+                  <ellipse cx="50" cy="50" rx="15" ry="45"/>
+                  <ellipse cx="50" cy="50" rx="30" ry="45"/>
+                  <ellipse cx="50" cy="50" rx="45" ry="45"/>
+                  
+                  <!-- Center vertical line -->
+                  <line x1="50" y1="5" x2="50" y2="95"/>
+                  
+                  <!-- Center horizontal line -->
+                  <line x1="5" y1="50" x2="95" y2="50"/>
                 </g>
-                
-                <!-- Gold outer ring -->
-                <circle cx="50" cy="50" r="49" fill="none" stroke="url(#goldFillHero)" stroke-width="1.5" opacity="0.6"/>
-                
-                <!-- Shine overlay -->
-                <circle cx="50" cy="50" r="48" fill="url(#shineOverlayHero)"/>
               </svg>
             </div>
             
