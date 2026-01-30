@@ -66,71 +66,68 @@ import mainBuilding from '../assets/images/image-01-main-building-369x450.jpg';
             <!-- Glow effect behind logo -->
             <div class="absolute -inset-8 bg-gradient-to-r from-[#D4AF37]/20 via-[#FFD700]/15 to-[#B8860B]/20 rounded-full blur-3xl"></div>
             
-            <!-- Large Globe -->
+            <!-- Large Globe - Accurate Earth -->
             <div class="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-2xl">
                 <defs>
-                  <linearGradient id="goldGradientHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="goldFillHero" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style="stop-color:#D4AF37"/>
                     <stop offset="50%" style="stop-color:#FFD700"/>
                     <stop offset="100%" style="stop-color:#B8860B"/>
                   </linearGradient>
-                  <radialGradient id="sphereShineHero" cx="30%" cy="30%" r="60%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2"/>
+                  <radialGradient id="globeShineHero" cx="30%" cy="30%" r="70%">
+                    <stop offset="0%" style="stop-color:#2a2a2a"/>
+                    <stop offset="100%" style="stop-color:#0a0a0a"/>
+                  </radialGradient>
+                  <radialGradient id="shineOverlayHero" cx="25%" cy="25%" r="50%">
+                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.12"/>
                     <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
                   </radialGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
+                  <clipPath id="globeClipHero">
+                    <circle cx="50" cy="50" r="46"/>
+                  </clipPath>
                 </defs>
                 
-                <!-- Main globe circle -->
-                <circle cx="50" cy="50" r="46" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="0.5"/>
+                <!-- Globe background -->
+                <circle cx="50" cy="50" r="46" fill="url(#globeShineHero)"/>
                 
-                <!-- Grid lines -->
-                <g stroke="#1f1f1f" stroke-width="0.3" fill="none">
-                  <ellipse cx="50" cy="50" rx="44" ry="44"/>
-                  <ellipse cx="50" cy="50" rx="44" ry="22"/>
-                  <ellipse cx="50" cy="50" rx="44" ry="33"/>
-                  <ellipse cx="50" cy="50" rx="44" ry="11"/>
-                  <ellipse cx="50" cy="50" rx="22" ry="44"/>
-                  <ellipse cx="50" cy="50" rx="33" ry="44"/>
-                  <ellipse cx="50" cy="50" rx="11" ry="44"/>
+                <!-- Continents - Accurate Earth shapes -->
+                <g clip-path="url(#globeClipHero)" fill="url(#goldFillHero)">
+                  <!-- North America -->
+                  <path d="M8 22 L12 18 L18 16 L24 15 L28 17 L32 16 L36 18 L38 22 L36 26 L38 30 L42 32 L44 36 L42 40 L38 42 L34 44 L30 48 L26 52 L22 50 L18 46 L14 42 L12 38 L10 34 L8 30 L6 26 L8 22 Z"/>
+                  <!-- Greenland -->
+                  <path d="M38 12 L44 10 L50 11 L54 14 L52 18 L48 20 L42 18 L38 15 L38 12 Z"/>
+                  <!-- South America -->
+                  <path d="M26 54 L30 52 L34 54 L36 58 L38 64 L40 70 L38 76 L34 80 L30 82 L26 80 L24 74 L22 68 L22 62 L24 58 L26 54 Z"/>
+                  <!-- Europe -->
+                  <path d="M52 22 L56 20 L62 21 L66 24 L68 28 L66 32 L62 34 L58 32 L54 30 L52 26 L52 22 Z"/>
+                  <!-- Africa -->
+                  <path d="M54 36 L58 34 L64 36 L70 40 L74 46 L76 54 L74 62 L70 68 L64 72 L58 70 L54 64 L52 56 L52 48 L54 42 L54 36 Z"/>
+                  <!-- Middle East / Arabia -->
+                  <path d="M68 34 L72 32 L76 34 L78 38 L76 44 L72 46 L68 44 L66 40 L68 34 Z"/>
+                  <!-- Asia / Russia -->
+                  <path d="M70 18 L78 16 L86 18 L92 22 L94 28 L92 34 L88 36 L82 34 L78 30 L74 28 L70 24 L70 18 Z"/>
+                  <!-- India -->
+                  <path d="M76 46 L80 44 L84 48 L84 54 L80 58 L76 56 L74 50 L76 46 Z"/>
+                  <!-- Southeast Asia -->
+                  <path d="M84 50 L88 48 L92 52 L90 58 L86 60 L82 56 L84 50 Z"/>
+                  <!-- Australia -->
+                  <path d="M82 68 L88 66 L94 70 L94 76 L90 80 L84 78 L80 74 L82 68 Z"/>
                 </g>
                 
-                <!-- Continents with gold borders -->
-                <g filter="url(#glow)">
-                  <path d="M20 28 Q25 25 32 26 Q38 24 42 28 Q44 32 40 38 Q36 42 30 40 Q24 38 22 34 Q18 30 20 28Z" 
-                        fill="none" stroke="url(#goldGradientHero)" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M32 50 Q36 48 38 52 Q40 58 38 66 Q35 72 32 70 Q28 66 30 58 Q31 52 32 50Z" 
-                        fill="none" stroke="url(#goldGradientHero)" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M52 24 Q58 22 62 26 Q66 30 64 34 Q60 36 56 34 Q52 32 52 28 Q51 26 52 24Z" 
-                        fill="none" stroke="url(#goldGradientHero)" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M56 40 Q62 38 66 44 Q70 52 68 62 Q64 70 58 68 Q52 64 54 54 Q55 46 56 40Z" 
-                        fill="none" stroke="url(#goldGradientHero)" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M68 26 Q74 24 80 28 Q84 34 82 42 Q78 48 72 46 Q66 42 68 34 Q67 30 68 26Z" 
-                        fill="none" stroke="url(#goldGradientHero)" stroke-width="1.5" stroke-linecap="round"/>
-                  <path d="M74 60 Q80 58 82 64 Q82 70 78 72 Q74 72 72 68 Q72 62 74 60Z" 
-                        fill="none" stroke="url(#goldGradientHero)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Subtle grid lines -->
+                <g stroke="#ffffff" stroke-width="0.15" fill="none" opacity="0.08">
+                  <ellipse cx="50" cy="50" rx="46" ry="23"/>
+                  <ellipse cx="50" cy="50" rx="46" ry="35"/>
+                  <ellipse cx="50" cy="50" rx="23" ry="46"/>
+                  <ellipse cx="50" cy="50" rx="35" ry="46"/>
                 </g>
                 
-                <!-- Gold highlight dots -->
-                <circle cx="28" cy="32" r="2" fill="url(#goldGradientHero)"/>
-                <circle cx="58" cy="28" r="2" fill="url(#goldGradientHero)"/>
-                <circle cx="60" cy="52" r="2" fill="url(#goldGradientHero)"/>
-                <circle cx="76" cy="36" r="2" fill="url(#goldGradientHero)"/>
-                <circle cx="34" cy="58" r="1.5" fill="url(#goldGradientHero)"/>
-                <circle cx="78" cy="66" r="1.5" fill="url(#goldGradientHero)"/>
+                <!-- Gold outer ring -->
+                <circle cx="50" cy="50" r="47.5" fill="none" stroke="url(#goldFillHero)" stroke-width="1.5" opacity="0.7"/>
                 
-                <!-- Outer ring -->
-                <circle cx="50" cy="50" r="47.5" fill="none" stroke="url(#goldGradientHero)" stroke-width="0.75" opacity="0.6"/>
-                
-                <!-- Shine -->
-                <circle cx="50" cy="50" r="46" fill="url(#sphereShineHero)"/>
+                <!-- Shine overlay -->
+                <circle cx="50" cy="50" r="46" fill="url(#shineOverlayHero)"/>
               </svg>
             </div>
             
