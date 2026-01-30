@@ -1,0 +1,76 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gold gradient for land highlights -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    
+    <!-- Subtle shine effect -->
+    <radialGradient id="sphereShine" cx="30%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+    </radialGradient>
+    
+    <!-- Globe shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Main globe circle - dark background -->
+  <circle cx="50" cy="50" r="46" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1" filter="url(#shadow)"/>
+  
+  <!-- Grid lines (latitude/longitude) - subtle -->
+  <g stroke="#2a2a2a" stroke-width="0.5" fill="none">
+    <!-- Equator -->
+    <ellipse cx="50" cy="50" rx="44" ry="44"/>
+    <!-- Latitude lines -->
+    <ellipse cx="50" cy="50" rx="44" ry="22"/>
+    <ellipse cx="50" cy="50" rx="44" ry="11"/>
+    <ellipse cx="50" cy="50" rx="44" ry="33"/>
+    <!-- Longitude lines -->
+    <ellipse cx="50" cy="50" rx="22" ry="44"/>
+    <ellipse cx="50" cy="50" rx="11" ry="44"/>
+    <ellipse cx="50" cy="50" rx="33" ry="44"/>
+  </g>
+  
+  <!-- Continental shapes with gold borders -->
+  <!-- North America -->
+  <path d="M20 28 Q25 25 32 26 Q38 24 42 28 Q44 32 40 38 Q36 42 30 40 Q24 38 22 34 Q18 30 20 28Z" 
+        fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- South America -->
+  <path d="M32 50 Q36 48 38 52 Q40 58 38 66 Q35 72 32 70 Q28 66 30 58 Q31 52 32 50Z" 
+        fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Europe -->
+  <path d="M52 24 Q58 22 62 26 Q66 30 64 34 Q60 36 56 34 Q52 32 52 28 Q51 26 52 24Z" 
+        fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Africa -->
+  <path d="M56 40 Q62 38 66 44 Q70 52 68 62 Q64 70 58 68 Q52 64 54 54 Q55 46 56 40Z" 
+        fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Asia -->
+  <path d="M68 26 Q74 24 80 28 Q84 34 82 42 Q78 48 72 46 Q66 42 68 34 Q67 30 68 26Z" 
+        fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Australia -->
+  <path d="M74 60 Q80 58 82 64 Q82 70 78 72 Q74 72 72 68 Q72 62 74 60Z" 
+        fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Subtle gold dots for cities/highlights -->
+  <circle cx="28" cy="32" r="1.5" fill="url(#goldGradient)"/>
+  <circle cx="58" cy="28" r="1.5" fill="url(#goldGradient)"/>
+  <circle cx="60" cy="52" r="1.5" fill="url(#goldGradient)"/>
+  <circle cx="76" cy="36" r="1.5" fill="url(#goldGradient)"/>
+  <circle cx="34" cy="58" r="1.5" fill="url(#goldGradient)"/>
+  
+  <!-- Outer ring - gold accent -->
+  <circle cx="50" cy="50" r="47" fill="none" stroke="url(#goldGradient)" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Shine overlay -->
+  <circle cx="50" cy="50" r="46" fill="url(#sphereShine)"/>
+</svg>
