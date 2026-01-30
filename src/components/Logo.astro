@@ -7,21 +7,27 @@ interface Props {
 const { class: className = '', size = 'md' } = Astro.props;
 
 const sizes = {
-  sm: 'h-8',
-  md: 'h-10',
-  lg: 'h-12'
+  sm: 'h-8 w-8',
+  md: 'h-10 w-10',
+  lg: 'h-12 w-12'
+};
+
+const textSizes = {
+  sm: 'text-sm',
+  md: 'text-base',
+  lg: 'text-lg'
 };
 ---
 
 <a href="/" class:list={["flex items-center gap-3 group", className]}>
-  <div class:list={["flex items-center justify-center bg-primary-700 text-white font-bold rounded-lg", sizes[size], size === 'sm' ? 'w-8 text-sm' : size === 'md' ? 'w-10 text-base' : 'w-12 text-lg']}>
+  <div class:list={["flex items-center justify-center bg-gradient-to-br from-accent-500 to-accent-600 text-white font-bold rounded-xl shadow-lg shadow-accent-500/20", sizes[size], textSizes[size]]}>
     <span>G</span>
   </div>
   <div class="flex flex-col">
-    <span class="font-bold text-primary-900 group-hover:text-primary-700 transition-colors leading-tight">
+    <span class="font-bold text-white group-hover:text-accent-400 transition-colors leading-tight">
       Global Management
     </span>
-    <span class="text-xs text-neutral-500 leading-tight">
+    <span class="text-xs text-text-secondary leading-tight">
       & Construction Corp.
     </span>
   </div>
