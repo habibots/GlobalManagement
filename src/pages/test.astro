@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Test Page" description="Testing View Transitions and layout components">
+  <section class="py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-6">
+        ✓ Phase 2 Complete
+      </span>
+      
+      <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
+        Layout System Test
+      </h1>
+      
+      <p class="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
+        This page tests the BaseLayout, Header, Footer, and View Transitions. 
+        Navigate between pages to see smooth transitions.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a 
+          href="/" 
+          class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors"
+        >
+          Go to Home
+        </a>
+        <a 
+          href="/about" 
+          class="px-6 py-3 bg-neutral-200 hover:bg-neutral-300 text-neutral-700 font-semibold rounded-lg transition-colors"
+        >
+          Go to About
+        </a>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-lg p-8 text-left">
+        <h2 class="text-xl font-semibold text-neutral-900 mb-4">Component Checklist</h2>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">✓</span>
+            <span class="text-neutral-700">BaseLayout with ViewTransitions</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">✓</span>
+            <span class="text-neutral-700">Header with logo and navigation</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">✓</span>
+            <span class="text-neutral-700">Footer with company info</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">✓</span>
+            <span class="text-neutral-700">Mobile navigation (resize to test)</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">✓</span>
+            <span class="text-neutral-700">Brand colors applied</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">✓</span>
+            <span class="text-neutral-700">Responsive design</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="bg-primary-100 p-6 rounded-lg">
+          <div class="text-2xl font-bold text-primary-700 mb-2">Primary</div>
+          <div class="text-sm text-primary-600">Brand blues</div>
+        </div>
+        <div class="bg-accent-100 p-6 rounded-lg">
+          <div class="text-2xl font-bold text-accent-700 mb-2">Accent</div>
+          <div class="text-sm text-accent-600">Orange highlight</div>
+        </div>
+        <div class="bg-neutral-200 p-6 rounded-lg">
+          <div class="text-2xl font-bold text-neutral-700 mb-2">Neutral</div>
+          <div class="text-sm text-neutral-600">Gray tones</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
