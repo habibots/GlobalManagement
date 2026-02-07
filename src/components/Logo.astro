@@ -20,7 +20,7 @@ const sizes = {
   <div class:list={["relative flex-shrink-0", sizes[size]]}>
     <!-- Simple Wireframe Globe - Grid Lines Only -->
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-      <g fill="none" stroke="#FFFFFF" stroke-width="1.5">
+      <g fill="none" stroke="#1B3A5C" stroke-width="1.5">
         <!-- Outer circle -->
         <circle cx="50" cy="50" r="45"/>
         
@@ -46,7 +46,7 @@ const sizes = {
   {showText && (
     <div class="flex flex-col">
       <span class:list={[
-        "font-bold text-white group-hover:text-gray-300 transition-colors leading-tight",
+        "font-bold text-text-primary group-hover:text-accent-500 transition-colors leading-tight",
         size === 'hero' ? 'text-xl md:text-2xl' : size === 'xl' ? 'text-lg' : ''
       ]}>
         Global Management

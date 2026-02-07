@@ -1,0 +1,21 @@
+# 301 Redirects: Old GoDaddy .html URLs → New clean URLs
+# These handle visitors coming from old bookmarks, search engine cache, etc.
+
+# Old HTML pages → New clean URLs
+/index.html          /                 301
+/home.html           /                 301
+/services.html       /services         301
+/about.html          /about            301
+/about-us.html       /about            301
+/contact.html        /contact          301
+/contact-us.html     /contact          301
+
+# Common old URL patterns
+/home                /                 301
+/about-us            /about            301
+/contact-us          /contact          301
+
+# Trailing slash normalization
+/services/           /services         301
+/about/              /about            301
+/contact/            /contact          301
