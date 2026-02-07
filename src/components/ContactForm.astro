@@ -1,0 +1,140 @@
+---
+interface Props {
+  accessKey?: string;
+}
+
+const { accessKey = 'REDACTED_WEB3FORMS_KEY' } = Astro.props;
+const siteUrl = import.meta.env.SITE || 'https://globalconstructionnv.com';
+---
+
+<form 
+  action="https://api.web3forms.com/submit" 
+  method="POST"
+  class="space-y-6"
+  id="contact-form"
+>
+  <!-- Web3Forms Hidden Fields -->
+  <input type="hidden" name="access_key" value={accessKey} />
+  <input type="hidden" name="subject" value="New Contact from Global Management Website" />
+  <input type="hidden" name="redirect" value={`${siteUrl}/thank-you`} />
+  <input type="hidden" name="from_name" value="Global Management Website" />
+  
+  <!-- Honeypot Spam Protection -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+  
+  <!-- Name Field -->
+  <div>
+    <label for="name" class="block text-sm font-medium text-text-secondary mb-2">
+      Name <span class="text-amber">*</span>
+    </label>
+    <input 
+      type="text" 
+      name="name" 
+      id="name"
+      required
+      placeholder="Your full name"
+      class="w-full px-4 py-3 bg-[#F9F8F6] border border-border rounded-xl text-text-primary placeholder-text-muted focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all duration-200 outline-none"
+    />
+  </div>
+  
+  <!-- Email Field -->
+  <div>
+    <label for="email" class="block text-sm font-medium text-text-secondary mb-2">
+      Email <span class="text-amber">*</span>
+    </label>
+    <input 
+      type="email" 
+      name="email" 
+      id="email"
+      required
+      placeholder="your@email.com"
+      class="w-full px-4 py-3 bg-[#F9F8F6] border border-border rounded-xl text-text-primary placeholder-text-muted focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all duration-200 outline-none"
+    />
+  </div>
+  
+  <!-- Phone Field -->
+  <div>
+    <label for="phone" class="block text-sm font-medium text-text-secondary mb-2">
+      Phone <span class="text-text-muted">(optional)</span>
+    </label>
+    <input 
+      type="tel" 
+      name="phone" 
+      id="phone"
+      placeholder="(702) 555-0123"
+      class="w-full px-4 py-3 bg-[#F9F8F6] border border-border rounded-xl text-text-primary placeholder-text-muted focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all duration-200 outline-none"
+    />
+  </div>
+  
+  <!-- Subject Dropdown -->
+  <div>
+    <label for="subject_type" class="block text-sm font-medium text-text-secondary mb-2">
+      Subject <span class="text-text-muted">(optional)</span>
+    </label>
+    <select 
+      name="subject_type" 
+      id="subject_type"
+      class="w-full px-4 py-3 bg-[#F9F8F6] border border-border rounded-xl text-text-primary focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all duration-200 outline-none appearance-none cursor-pointer"
+      style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%239ca3af%22 stroke-width=%222%22><path d=%22m6 9 6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.5em;"
+    >
+      <option value="">Select a topic...</option>
+      <option value="general">General Inquiry</option>
+      <option value="quote">Request a Quote</option>
+      <option value="preconstruction">Pre-Construction Services</option>
+      <option value="construction">Construction Services</option>
+      <option value="project">Project Management</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  
+  <!-- Message Field -->
+  <div>
+    <label for="message" class="block text-sm font-medium text-text-secondary mb-2">
+      Message <span class="text-amber">*</span>
+    </label>
+    <textarea 
+      name="message" 
+      id="message"
+      required
+      rows="5"
+      placeholder="Tell us about your project or inquiry..."
+      class="w-full px-4 py-3 bg-[#F9F8F6] border border-border rounded-xl text-text-primary placeholder-text-muted focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all duration-200 outline-none resize-none"
+    ></textarea>
+  </div>
+  
+  <!-- Submit Button -->
+  <button 
+    type="submit"
+    id="submit-btn"
+    class="w-full px-6 py-4 bg-amber hover:bg-amber-dark text-white font-semibold rounded-xl transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2"
+  >
+    <span id="btn-text">Send Message</span>
+    <svg id="btn-icon" class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+    </svg>
+    <svg id="btn-loading" class="w-5 h-5 animate-spin hidden" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+  </button>
+  
+  <p class="text-text-muted text-sm text-center">
+    We typically respond within 24 hours.
+  </p>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const btnText = document.getElementById('btn-text') as HTMLSpanElement;
+  const btnIcon = document.getElementById('btn-icon') as SVGElement;
+  const btnLoading = document.getElementById('btn-loading') as SVGElement;
+  
+  form?.addEventListener('submit', () => {
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.textContent = 'Sending...';
+    btnIcon.classList.add('hidden');
+    btnLoading.classList.remove('hidden');
+  });
+</script>

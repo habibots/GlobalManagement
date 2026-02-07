@@ -21,13 +21,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#030303" />
+    <meta name="theme-color" content="#F5F3EF" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -41,32 +41,73 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
     
-    <!-- Fonts -->
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+    
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
     
     <title>{siteTitle}</title>
     
     <!-- View Transitions -->
     <ViewTransitions />
+    
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "GeneralContractor",
+        "name": "Global Management & Construction Corp.",
+        "description": "Nevada General Contractor specializing in commercial construction, design-build, and project management in Las Vegas",
+        "url": "https://www.globalconstructionnv.com",
+        "logo": "https://www.globalconstructionnv.com/favicon.svg",
+        "telephone": "702-890-0900",
+        "email": "info@globalconstructionnv.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "9500 Hillwood Dr, Suite #201",
+          "addressLocality": "Las Vegas",
+          "addressRegion": "NV",
+          "postalCode": "89134",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.1947",
+          "longitude": "-115.3066"
+        },
+        "foundingDate": "2004",
+        "areaServed": {
+          "@type": "State",
+          "name": "Nevada"
+        },
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": []
+      }
+    </script>
   </head>
-  <body class="min-h-screen bg-dark-950 text-white flex flex-col antialiased">
-    <!-- Ambient background glow -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-      <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-vibrant-purple/10 rounded-full blur-[120px]"></div>
-      <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-vibrant-blue/10 rounded-full blur-[100px]"></div>
-      <div class="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-vibrant-pink/5 rounded-full blur-[80px]"></div>
-    </div>
+  <body class="min-h-screen bg-dark-950 text-text-primary flex flex-col antialiased">
     
     <Header />
     
@@ -75,6 +116,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </main>
     
     <Footer />
+    
+    <!-- Scroll Animations -->
+    <script src="../scripts/scroll-animations.js"></script>
+    
+    <!-- Cloudflare Web Analytics -->
+    <!-- TODO: Replace YOUR_CF_BEACON_TOKEN with your actual Cloudflare Web Analytics token -->
+    <!-- Get token from: Cloudflare Dashboard → Web Analytics → Add Site → globalconstructionnv.com -->
+    <!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CF_BEACON_TOKEN"}'></script> -->
   </body>
 </html>
 
@@ -89,11 +138,38 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     to { opacity: 0; }
   }
   
+  @keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes slide-out-left {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-20px); }
+  }
+  
   ::view-transition-old(root) {
-    animation: 150ms ease-out fade-out;
+    animation: 250ms ease-out slide-out-left;
   }
   
   ::view-transition-new(root) {
-    animation: 200ms ease-out fade-in;
+    animation: 300ms ease-out slide-in-right;
+  }
+  
+  /* Named transitions for key elements */
+  [transition\:name="hero"] {
+    view-transition-name: hero;
+  }
+  
+  [transition\:name="page-title"] {
+    view-transition-name: page-title;
+  }
+  
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.01ms !important;
+    }
   }
 </style>

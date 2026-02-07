@@ -1,138 +1,224 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import icon01 from '../assets/images/icon-01-191x188.jpg';
+import icon02 from '../assets/images/icon-02-250x247.jpg';
+import icon03 from '../assets/images/icon-03-232x231.jpg';
+import icon04 from '../assets/images/icon-04-225x222.jpg';
 ---
 
-<BaseLayout title="Services" description="Explore our construction and management services - commercial, residential, renovations, and project management in Las Vegas, NV.">
-  <section class="py-20 md:py-32 relative">
-    <!-- Background gradient -->
-    <div class="absolute top-20 left-0 w-[400px] h-[400px] bg-gradient-to-r from-vibrant-cyan/10 to-transparent rounded-full blur-[100px]"></div>
-    
+<BaseLayout title="Construction Services Las Vegas | Design Build & Project Management" description="Comprehensive construction services including design-build, project management, feasibility studies, and commercial construction in Las Vegas, Nevada.">
+  <!-- Page Header -->
+  <section class="py-8 md:py-12 relative">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16">
-        <span class="text-accent-400 text-sm font-semibold uppercase tracking-wider mb-4 block">What We Do</span>
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+      <div class="text-center">
+        <span class="text-amber text-sm font-semibold uppercase tracking-wider mb-4 block">What We Do</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-text-primary" transition:name="page-title">
           Our Services
         </h1>
-        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-          Comprehensive construction and management solutions for your project needs
-        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Construction Services -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">Pre-Construction Services</h2>
+        <p class="text-text-secondary">Planning and preparation to ensure your project starts on the right foundation.</p>
       </div>
       
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="group p-8 bg-dark-800/50 rounded-2xl border border-border hover:border-accent-500/50 transition-all duration-300">
-          <div class="w-14 h-14 bg-gradient-to-br from-accent-500/20 to-vibrant-orange/20 text-accent-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group p-6 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Feasibility Studies</h3>
+          <p class="text-text-secondary text-sm">Comprehensive analysis to determine project viability and potential challenges.</p>
+        </div>
+        
+        <div class="group p-6 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Design Coordination & Management</h3>
+          <p class="text-text-secondary text-sm">Seamless coordination between architects, engineers, and designers.</p>
+        </div>
+        
+        <div class="group p-6 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Preliminary Design Analysis</h3>
+          <p class="text-text-secondary text-sm">Early-stage design review to optimize project outcomes.</p>
+        </div>
+        
+        <div class="group p-6 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Preliminary Budgetary Estimates</h3>
+          <p class="text-text-secondary text-sm">Accurate cost projections to guide your investment decisions.</p>
+        </div>
+        
+        <div class="group p-6 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Project Analysis</h3>
+          <p class="text-text-secondary text-sm">In-depth project evaluation to identify opportunities and risks.</p>
+        </div>
+        
+        <div class="group p-6 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Processing Building Permits</h3>
+          <p class="text-text-secondary text-sm">Expert navigation of permit requirements and approvals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction Services -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">Construction Services</h2>
+        <p class="text-text-secondary">Full-service construction solutions from design to completion.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="group p-8 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-14 h-14 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-6">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Commercial Construction</h3>
-          <p class="text-text-secondary mb-4">
-            Full-service commercial construction for offices, retail spaces, and industrial facilities.
-          </p>
-          <ul class="space-y-2 text-sm text-text-muted">
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-accent-500 rounded-full"></span>
-              Office Buildings
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-accent-500 rounded-full"></span>
-              Retail Spaces
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-accent-500 rounded-full"></span>
-              Industrial Facilities
-            </li>
-          </ul>
+          <h3 class="text-xl font-semibold text-text-primary mb-3">Design Build</h3>
+          <p class="text-text-secondary">Complete design-build services providing a single point of responsibility for seamless project delivery.</p>
         </div>
         
-        <div class="group p-8 bg-dark-800/50 rounded-2xl border border-border hover:border-vibrant-purple/50 transition-all duration-300">
-          <div class="w-14 h-14 bg-gradient-to-br from-vibrant-purple/20 to-vibrant-pink/20 text-vibrant-purple rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div class="group p-8 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-14 h-14 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-6">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Residential Construction</h3>
-          <p class="text-text-secondary mb-4">
-            Custom homes and residential projects built to the highest standards of quality.
-          </p>
-          <ul class="space-y-2 text-sm text-text-muted">
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-purple rounded-full"></span>
-              Custom Homes
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-purple rounded-full"></span>
-              Multi-Family Units
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-purple rounded-full"></span>
-              Luxury Residences
-            </li>
-          </ul>
+          <h3 class="text-xl font-semibold text-text-primary mb-3">Project Management</h3>
+          <p class="text-text-secondary">Professional oversight ensuring projects stay on schedule and within budget with comprehensive progress reporting.</p>
         </div>
         
-        <div class="group p-8 bg-dark-800/50 rounded-2xl border border-border hover:border-vibrant-cyan/50 transition-all duration-300">
-          <div class="w-14 h-14 bg-gradient-to-br from-vibrant-cyan/20 to-vibrant-blue/20 text-vibrant-cyan rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Renovations</h3>
-          <p class="text-text-secondary mb-4">
-            Transform existing spaces with our expert renovation and remodeling services.
-          </p>
-          <ul class="space-y-2 text-sm text-text-muted">
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-cyan rounded-full"></span>
-              Interior Remodeling
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-cyan rounded-full"></span>
-              Structural Updates
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-cyan rounded-full"></span>
-              Modern Upgrades
-            </li>
-          </ul>
-        </div>
-        
-        <div class="group p-8 bg-dark-800/50 rounded-2xl border border-border hover:border-vibrant-green/50 transition-all duration-300">
-          <div class="w-14 h-14 bg-gradient-to-br from-vibrant-green/20 to-vibrant-cyan/20 text-vibrant-green rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div class="group p-8 bg-white rounded-2xl border border-border hover:border-accent-500/50 hover:scale-105 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-out">
+          <div class="w-14 h-14 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-6">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Project Management</h3>
-          <p class="text-text-secondary mb-4">
-            Professional oversight ensuring projects stay on schedule and within budget.
-          </p>
-          <ul class="space-y-2 text-sm text-text-muted">
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-green rounded-full"></span>
-              Timeline Management
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-green rounded-full"></span>
-              Budget Oversight
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 bg-vibrant-green rounded-full"></span>
-              Quality Assurance
-            </li>
-          </ul>
+          <h3 class="text-xl font-semibold text-text-primary mb-3">Construction Management</h3>
+          <p class="text-text-secondary">Coordination with all entities in compliance with building codes and quality standards.</p>
         </div>
       </div>
-      
-      <div class="mt-16 text-center">
-        <a 
-          href="/contact" 
-          class="group inline-block px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-accent-500/25"
-        >
-          Get a Quote
-          <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
-        </a>
+    </div>
+  </section>
+
+  <!-- Service Details -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">Our Approach</h2>
+        <p class="text-text-secondary max-w-2xl mx-auto">From initial concept to final delivery, we provide expert guidance at every stage.</p>
       </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-8 bg-white rounded-2xl border border-border flex gap-6">
+          <div class="flex-shrink-0 hidden sm:block">
+            <Image src={icon01} alt="Global Management - Project Development" class="w-16 h-16 rounded-xl object-cover" loading="lazy" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-4">Project Development</h3>
+            <p class="text-text-secondary leading-relaxed">
+              Our Principals are well experienced in the project development stages and aware of the details necessary for completing projects on time, within budget while maintaining standards of quality work.
+            </p>
+          </div>
+        </div>
+        
+        <div class="p-8 bg-white rounded-2xl border border-border flex gap-6">
+          <div class="flex-shrink-0 hidden sm:block">
+            <Image src={icon02} alt="Global Management - Initial Stage Involvement" class="w-16 h-16 rounded-xl object-cover" loading="lazy" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-4">Initial Stage Involvement</h3>
+            <p class="text-text-secondary leading-relaxed">
+              To achieve the best outcome for our clients we avail our expertise to Architects, Engineers and designers to assist in the development of the project, based on the client's needs and requirements, providing cost saving and quality enhancement solutions at the initial project stages.
+            </p>
+          </div>
+        </div>
+        
+        <div class="p-8 bg-white rounded-2xl border border-border flex gap-6">
+          <div class="flex-shrink-0 hidden sm:block">
+            <Image src={icon03} alt="Global Management - Permitting and Approval" class="w-16 h-16 rounded-xl object-cover" loading="lazy" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-4">Permitting and Approval</h3>
+            <p class="text-text-secondary leading-relaxed">
+              Our team is well conversed in building codes and practices and work diligently with different entities to efficiently obtain permits and approvals in timely manner conducive to smooth execution of the works.
+            </p>
+          </div>
+        </div>
+        
+        <div class="p-8 bg-white rounded-2xl border border-border flex gap-6">
+          <div class="flex-shrink-0 hidden sm:block">
+            <Image src={icon04} alt="Global Management - Construction Management" class="w-16 h-16 rounded-xl object-cover" loading="lazy" />
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-text-primary mb-4">Construction Management</h3>
+            <p class="text-text-secondary leading-relaxed">
+              We work with all entities to coordinate the process of construction in compliance with building codes and quality standards. Prepare comprehensive schedules for construction and furnish progress reports to keep our clients abreast of the development of their project.
+            </p>
+          </div>
+        </div>
+        
+        <div class="p-8 bg-white rounded-2xl border border-border md:col-span-2">
+          <h3 class="text-xl font-semibold text-text-primary mb-4">Project Completion</h3>
+          <p class="text-text-secondary leading-relaxed">
+            Projects coordination does not end with construction but with the clients receiving and operating their new premises. This entails assisting in obtaining all necessary approvals and certificates for their successful operation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 relative overflow-hidden scroll-fade">
+    <div class="absolute inset-0 bg-slate-dark"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Ready to Start Your Project?
+      </h2>
+      <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+        Contact us today for a free consultation and quote. Let's build something great together.
+      </p>
+      <a 
+        href="/contact" 
+        class="group inline-block px-8 py-4 bg-amber hover:bg-amber-dark text-white font-semibold rounded-xl transition-all duration-300"
+      >
+        Get a Quote
+        <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+      </a>
     </div>
   </section>
 </BaseLayout>

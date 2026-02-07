@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="3D Virtual Tour | Project Gallery" description="Explore Global Management & Construction projects in immersive 360° panoramic views. Interactive 3D virtual tour of our Las Vegas construction work.">
+  <!-- Page Header -->
+  <section class="py-8 md:py-12 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center">
+        <span class="text-amber text-sm font-semibold uppercase tracking-wider mb-4 block">Explore Our Work</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-text-primary" transition:name="page-title">
+          3D Virtual Tour
+        </h1>
+        <p class="text-lg text-text-secondary mt-4 max-w-2xl mx-auto">
+          Step inside our projects with interactive 360° panoramic views. Click and drag to look around, scroll to zoom.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-Size VR Tour -->
+  <section class="pb-8 md:pb-12 scroll-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-2xl overflow-hidden border border-border shadow-lg bg-white">
+        <div class="aspect-[16/9] md:aspect-[21/9] w-full min-h-[500px]">
+          <iframe 
+            src="https://vr.shinewonder.com/pano/page/publik/pklimit?inf=ECLEFEG@EDDLGDCDA"
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            scrolling="no"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            title="Global Management & Construction - 3D Virtual Tour"
+            class="w-full h-full"
+          ></iframe>
+        </div>
+      </div>
+      
+      <!-- Controls hint -->
+      <div class="mt-6 flex flex-wrap justify-center gap-6 text-sm text-text-secondary">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-accent-50 text-accent-500 rounded-lg flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+            </svg>
+          </div>
+          <span>Click & drag to look around</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-accent-50 text-accent-500 rounded-lg flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+          <span>Scroll to zoom in/out</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-accent-50 text-accent-500 rounded-lg flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+          </div>
+          <span>Fullscreen for best experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Info -->
+  <section class="py-12 md:py-16 scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-border text-center">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Immersive Views</h3>
+          <p class="text-text-secondary text-sm">Full 360° panoramic photography of our completed construction projects.</p>
+        </div>
+        
+        <div class="p-6 bg-white rounded-2xl border border-border text-center">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Quality Craftsmanship</h3>
+          <p class="text-text-secondary text-sm">See the attention to detail and quality standards we bring to every project.</p>
+        </div>
+        
+        <div class="p-6 bg-white rounded-2xl border border-border text-center">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Interactive Experience</h3>
+          <p class="text-text-secondary text-sm">Navigate through spaces as if you were there — works on desktop and mobile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 relative overflow-hidden scroll-fade">
+    <div class="absolute inset-0 bg-slate-dark"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Like What You See?
+      </h2>
+      <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+        Let us bring the same level of quality and craftsmanship to your next project.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a 
+          href="/contact" 
+          class="group px-8 py-4 bg-amber hover:bg-amber-dark text-white font-semibold rounded-xl transition-all duration-300"
+        >
+          Get a Free Quote
+          <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+        </a>
+        <a 
+          href="tel:702-890-0900" 
+          class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-300 border border-white/20 hover:border-white/30"
+        >
+          Call 702-890-0900
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

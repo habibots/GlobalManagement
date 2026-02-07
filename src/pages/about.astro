@@ -1,68 +1,268 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import mainBuilding from '../assets/images/image-01-main-building-369x450.jpg';
 ---
 
-<BaseLayout title="About Us" description="Learn about Global Management & Construction Corp. - Quality construction services in Las Vegas, Nevada since our founding.">
-  <section class="py-20 md:py-32 relative">
-    <!-- Background gradient -->
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-l from-vibrant-purple/10 to-transparent rounded-full blur-[100px]"></div>
-    
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center mb-16">
-        <span class="text-accent-400 text-sm font-semibold uppercase tracking-wider mb-4 block">About Us</span>
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-          Building Trust Through
-          <span class="bg-gradient-to-r from-accent-400 to-vibrant-pink bg-clip-text text-transparent"> Quality</span>
+<BaseLayout title="About Us | Est. 2004" description="Founded in 2004 by experienced engineers. Nevada License #66668. Providing trustworthy, honest, and reliable construction services in Las Vegas.">
+  <!-- Page Header -->
+  <section class="py-8 md:py-12 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center">
+        <span class="text-amber text-sm font-semibold uppercase tracking-wider mb-4 block">About Us</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-text-primary" transition:name="page-title">
+          About Us
         </h1>
-        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-          Dedicated to excellence in every project we undertake
-        </p>
       </div>
-      
-      <div class="space-y-6 text-lg">
-        <p class="text-text-secondary leading-relaxed">
-          Global Management & Construction Corp. is a licensed Nevada contractor dedicated to delivering 
-          exceptional construction and management services throughout the Las Vegas valley.
-        </p>
-        
-        <p class="text-text-secondary leading-relaxed">
-          With Nevada Contractor License #66668, we bring professional expertise and a commitment to 
-          excellence to every project, whether commercial or residential.
-        </p>
-        
-        <div class="my-12 p-8 bg-dark-800/50 border-l-4 border-accent-500 rounded-r-2xl">
-          <p class="text-white text-xl font-medium italic">
-            "Our mission is to exceed client expectations through quality workmanship, 
-            transparent communication, and on-time project delivery."
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-6">Our Mission</h2>
+          <p class="text-lg text-text-secondary mb-6 leading-relaxed">
+            Construction projects are orchestrated in meticulous planning, coordination and communications with all parties involved to ultimately achieve clients needs. To accomplish this goal we emphasize the need for:
           </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-amber rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-text-secondary">Involvement in the initial stages of the project</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-amber rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-text-secondary">Create a consultative model between owners, architects, engineers and other professionals to enhance communication</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-amber rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-text-secondary">Cost effectiveness and budgetary controls</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-amber rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-text-secondary">Effective and participative hands on job site management</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-amber rounded-full mt-2 flex-shrink-0"></span>
+              <span class="text-text-secondary">Attention to owners needs</span>
+            </li>
+          </ul>
         </div>
-        
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-6 my-12">
-          <div class="text-center p-6 bg-dark-800/30 rounded-2xl border border-border">
-            <div class="text-4xl font-bold text-accent-400 mb-2">15+</div>
-            <div class="text-text-muted text-sm">Years Experience</div>
-          </div>
-          <div class="text-center p-6 bg-dark-800/30 rounded-2xl border border-border">
-            <div class="text-4xl font-bold text-vibrant-purple mb-2">200+</div>
-            <div class="text-text-muted text-sm">Projects Completed</div>
-          </div>
-          <div class="text-center p-6 bg-dark-800/30 rounded-2xl border border-border">
-            <div class="text-4xl font-bold text-vibrant-cyan mb-2">100%</div>
-            <div class="text-text-muted text-sm">Client Satisfaction</div>
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden border border-border">
+            <Image 
+              src={mainBuilding} 
+              alt="Global Management & Construction - Commercial Building Project" 
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Statement -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 md:p-12 bg-white border-l-4 border-amber rounded-r-2xl shadow-sm">
+        <p class="text-lg md:text-xl text-text-secondary leading-relaxed">
+          Global Management & Construction Corp understands that the process is not simply construction and we made it our mission to strive to provide highest quality service to our clients in developing their projects efficiently, on time and to the highest quality. Our focus on core values of <span class="text-text-primary font-semibold">trustworthiness</span>, <span class="text-text-primary font-semibold">honesty</span>, <span class="text-text-primary font-semibold">dedication</span> and <span class="text-text-primary font-semibold">reliability</span> provides our client with unwavering commitment to their project as we pride ourselves in the satisfaction of our clients.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company History -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">Our History</h2>
+        <p class="text-text-secondary">Two decades of building excellence in Nevada</p>
       </div>
       
-      <div class="mt-12 text-center">
-        <a 
-          href="/contact" 
-          class="group inline-block px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-accent-500/25"
-        >
-          Contact Us Today
-          <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
-        </a>
+      <div class="max-w-4xl mx-auto">
+        <div class="p-8 bg-white rounded-2xl border border-border">
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            The Company was established in <span class="text-text-primary font-semibold">2004</span> by two accomplished engineers who amassed a vast wealth of experience internationally as well as locally. The founding Principals have participated in projects ranging from simple remodeling of space to complex airports and infrastructure projects.
+          </p>
+          <p class="text-lg text-text-secondary leading-relaxed mb-8">
+            The strength of the company, technically, financially and ethically have allowed us to complete numerous projects successfully and gain our clients trust, confidence and friendship. The wealth of experience of our team allows us to find creative solutions for construction challenges that might rise during the course of the project.
+          </p>
+          
+          <!-- Timeline -->
+          <div class="relative pl-8 border-l-2 border-accent-500/30 space-y-8 pt-6 border-t border-border">
+            <div class="relative">
+              <div class="absolute -left-[2.55rem] w-5 h-5 bg-accent-500 rounded-full border-4 border-white"></div>
+              <div class="text-sm text-amber font-semibold uppercase tracking-wider">2004</div>
+              <div class="text-lg font-bold text-text-primary">Company Founded</div>
+              <p class="text-text-secondary text-sm">Established by two accomplished engineers with international and local experience.</p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[2.55rem] w-5 h-5 bg-accent-500 rounded-full border-4 border-white"></div>
+              <div class="text-sm text-amber font-semibold uppercase tracking-wider">2006</div>
+              <div class="text-lg font-bold text-text-primary">Licensed in Nevada</div>
+              <p class="text-text-secondary text-sm">Obtained Nevada Contractor License #66668 with a $6.8 Million limit.</p>
+            </div>
+
+            <!-- PLACEHOLDER: Replace with real project milestone -->
+            <div class="relative">
+              <div class="absolute -left-[2.55rem] w-5 h-5 bg-accent-500/50 rounded-full border-4 border-white"></div>
+              <div class="text-sm text-amber font-semibold uppercase tracking-wider">2010</div>
+              <div class="text-lg font-bold text-text-primary">Milestone Title</div>
+              <p class="text-text-secondary text-sm">Project milestone description coming soon.</p>
+            </div>
+
+            <!-- PLACEHOLDER: Replace with real project milestone -->
+            <div class="relative">
+              <div class="absolute -left-[2.55rem] w-5 h-5 bg-accent-500/50 rounded-full border-4 border-white"></div>
+              <div class="text-sm text-amber font-semibold uppercase tracking-wider">2015</div>
+              <div class="text-lg font-bold text-text-primary">Milestone Title</div>
+              <p class="text-text-secondary text-sm">Project milestone description coming soon.</p>
+            </div>
+
+            <!-- PLACEHOLDER: Replace with real project milestone -->
+            <div class="relative">
+              <div class="absolute -left-[2.55rem] w-5 h-5 bg-accent-500/50 rounded-full border-4 border-white"></div>
+              <div class="text-sm text-amber font-semibold uppercase tracking-wider">2020</div>
+              <div class="text-lg font-bold text-text-primary">Milestone Title</div>
+              <p class="text-text-secondary text-sm">Project milestone description coming soon.</p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[2.55rem] w-5 h-5 bg-amber rounded-full border-4 border-white"></div>
+              <div class="text-sm text-amber font-semibold uppercase tracking-wider">Today</div>
+              <div class="text-lg font-bold text-text-primary">20+ Years of Excellence</div>
+              <p class="text-text-secondary text-sm">500+ projects completed with a $6.8M license limit — continuing to build Las Vegas.</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Our Leadership -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">Our Leadership</h2>
+        <p class="text-text-secondary">The experienced team behind every project</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- PLACEHOLDER: Replace with real team member photo, name, role, and bio -->
+        <div class="p-6 bg-white rounded-2xl border border-border text-center">
+          <div class="w-24 h-24 bg-accent-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-12 h-12 text-accent-500/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Team Member</h3>
+          <div class="text-amber text-sm font-medium mb-3">Role Title</div>
+          <p class="text-text-secondary text-sm">Bio coming soon.</p>
+        </div>
+
+        <!-- PLACEHOLDER: Replace with real team member photo, name, role, and bio -->
+        <div class="p-6 bg-white rounded-2xl border border-border text-center">
+          <div class="w-24 h-24 bg-accent-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-12 h-12 text-accent-500/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Team Member</h3>
+          <div class="text-amber text-sm font-medium mb-3">Role Title</div>
+          <p class="text-text-secondary text-sm">Bio coming soon.</p>
+        </div>
+
+        <!-- PLACEHOLDER: Replace with real team member photo, name, role, and bio -->
+        <div class="p-6 bg-white rounded-2xl border border-border text-center">
+          <div class="w-24 h-24 bg-accent-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-12 h-12 text-accent-500/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Team Member</h3>
+          <div class="text-amber text-sm font-medium mb-3">Role Title</div>
+          <p class="text-text-secondary text-sm">Bio coming soon.</p>
+        </div>
+
+        <!-- PLACEHOLDER: Replace with real team member photo, name, role, and bio -->
+        <div class="p-6 bg-white rounded-2xl border border-border text-center">
+          <div class="w-24 h-24 bg-accent-50 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-12 h-12 text-accent-500/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-1">Team Member</h3>
+          <div class="text-amber text-sm font-medium mb-3">Role Title</div>
+          <p class="text-text-secondary text-sm">Bio coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-12 md:py-16 relative scroll-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">Why Choose Us</h2>
+        <p class="text-text-secondary">What sets Global Management & Construction apart</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-border">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Licensed & Insured</h3>
+          <p class="text-text-secondary text-sm">Nevada Contractor License #66668 with $6.8 million limit. Fully insured for your protection.</p>
+        </div>
+        
+        <div class="p-6 bg-white rounded-2xl border border-border">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">International Experience</h3>
+          <p class="text-text-secondary text-sm">Principals with extensive international and local experience on complex projects.</p>
+        </div>
+        
+        <div class="p-6 bg-white rounded-2xl border border-border">
+          <div class="w-12 h-12 bg-accent-50 text-accent-500 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">Client Relationships</h3>
+          <p class="text-text-secondary text-sm">We build trust, confidence and lasting friendships with our clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 relative overflow-hidden scroll-fade">
+    <div class="absolute inset-0 bg-slate-dark"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        Ready to Work With Us?
+      </h2>
+      <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+        Let's discuss your project and how we can help bring your vision to life.
+      </p>
+      <a 
+        href="/contact" 
+        class="group inline-block px-8 py-4 bg-amber hover:bg-amber-dark text-white font-semibold rounded-xl transition-all duration-300"
+      >
+        Contact Us Today
+        <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+      </a>
     </div>
   </section>
 </BaseLayout>

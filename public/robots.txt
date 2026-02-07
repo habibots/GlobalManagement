@@ -1,0 +1,9 @@
+# robots.txt for Global Management & Construction
+# https://www.globalconstructionnv.com
+
+User-agent: *
+Allow: /
+Disallow: /thank-you
+
+# Sitemap
+Sitemap: https://www.globalconstructionnv.com/sitemap.xml
