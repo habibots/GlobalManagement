@@ -26,6 +26,9 @@ pnpm-debug.log*
 # generated reports
 reports/
 
+# Playwright test results
+test-results/
+
 # Legacy website downloads
 website_download/
 website_full/
