@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# generated reports
+reports/
+
+# Legacy website downloads
+website_download/
+website_full/

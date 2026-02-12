@@ -3,7 +3,7 @@ interface Props {
   accessKey?: string;
 }
 
-const { accessKey = 'REDACTED_WEB3FORMS_KEY' } = Astro.props;
+const { accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY } = Astro.props;
 const siteUrl = import.meta.env.SITE || 'https://globalconstructionnv.com';
 ---
 
