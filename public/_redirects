@@ -15,7 +15,6 @@
 /about-us            /about            301
 /contact-us          /contact          301
 
-# Trailing slash normalization
-/services/           /services         301
-/about/              /about            301
-/contact/            /contact          301
+# Note: No trailing-slash redirects needed — Astro static output
+# uses directory-based routing (/contact/index.html) so trailing
+# slashes are the canonical form.

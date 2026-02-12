@@ -189,13 +189,25 @@ const currentPath = Astro.url.pathname;
       }
     });
 
-    const menuLinks = panel.querySelectorAll('a');
+    const menuLinks = panel.querySelectorAll('a[href]');
     menuLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', () => {
+        backdrop.classList.remove('opacity-100');
+        backdrop.classList.add('opacity-0');
+        panel.classList.remove('translate-x-0');
+        panel.classList.add('translate-x-full');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menu.classList.add('hidden');
+        document.body.style.overflow = '';
+      });
     });
   }
 
   initMobileMenu();
+
+  document.addEventListener('astro:before-preparation', () => {
+    document.body.style.overflow = '';
+  });
 
   document.addEventListener('astro:after-swap', initMobileMenu);
 </script>
