@@ -1,0 +1,3 @@
+# Default ruleset; extend if site-specific patterns emerge.
+[extend]
+useDefault = true
