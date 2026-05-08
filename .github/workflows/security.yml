@@ -1,0 +1,20 @@
+name: security
+on:
+  push:
+    branches: [main, devops]
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+  id-token: write
+  attestations: write
+
+jobs:
+  base:
+    uses: ./.github/workflows/_security-base.yml
+    with:
+      site-type: static
+      scan-containers: false
+      working-directory: .
+      semgrep-rulesets: "tools/semgrep-custom/square-token-wrapper.yaml tools/semgrep-custom/webhook-signature.yaml p/owasp-top-ten p/javascript"
