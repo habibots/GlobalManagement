@@ -17,6 +17,13 @@ pnpm-debug.log*
 .env
 .env.production
 
+# Secrets
+.env.*
+!.env.example
+*.pem
+*.key
+.dev.vars
+
 # macOS-specific files
 .DS_Store
 
