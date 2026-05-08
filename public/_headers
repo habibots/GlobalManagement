@@ -1,13 +1,14 @@
 # Security and caching headers for production
-# Applied by DigitalOcean App Platform / Cloudflare
+# Applied automatically by Cloudflare Pages (public/_headers).
+# HSTS is set here as the single source of truth — Cloudflare edge HSTS is
+# intentionally OFF (see docs/runbooks/cloudflare-bootstrap.md §6.3).
 
 /*
-  X-Frame-Options: SAMEORIGIN
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://web3forms.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://vr.shinewonder.com; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; form-action https://api.web3forms.com; frame-ancestors 'none'; connect-src 'self' https://api.web3forms.com https://challenges.cloudflare.com
 
 # Cache static assets aggressively
 /_astro/*
