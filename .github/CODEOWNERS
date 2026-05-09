@@ -1,0 +1,10 @@
+# Default — habibots reviews all changes.
+*                                @habibots
+
+# Security-sensitive paths — explicit ownership.
+/.github/                        @habibots
+/policy/                         @habibots
+/tools/semgrep-custom/           @habibots
+/.gitleaks.toml                  @habibots
+/lefthook.yml                    @habibots
+/public/_headers                 @habibots
